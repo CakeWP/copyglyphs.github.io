@@ -1,0 +1,56 @@
+@import "node_modules/@wordpress/base-styles/colors";
+@import "node_modules/@wordpress/base-styles/variables";
+@import "node_modules/@wordpress/base-styles/mixins";
+@import "node_modules/@wordpress/base-styles/breakpoints";
+@import "node_modules/@wordpress/base-styles/animations";
+@import "node_modules/@wordpress/base-styles/z-index";
+
+
+@import "node_modules/@wordpress/components/src/button/style.scss";
+@import "node_modules/@wordpress/components/src/popover/style.scss";
+@import "node_modules/@wordpress/components/src/tooltip/style.scss";
+
+
+ul.editorskit-charmap-list {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+
+	display: grid;
+	grid-auto-columns: 1fr;
+    grid-column-gap: 0;
+	grid-row-gap: 0;
+	grid-template-rows: auto;
+	grid-template-columns: repeat(auto-fill, minmax(54px, 1fr));
+    width: 100%;
+    justify-items: center;
+
+	li {
+		display: flex;
+		align-self: stretch;
+		justify-self: stretch;
+		    justify-content: center;
+		border: 1px solid #c8c8c8;
+		padding: 2px;
+		margin: 0;
+
+		.components-button {
+			display: inline-block;
+			font-size: 25px;
+			width: 50px;
+			height: 50px;
+			color: #111;
+			border: 1px solid transparent;
+			text-align: center;
+			padding: 0;
+
+			&:hover {
+				border-color: #111;
+				color: #000 !important;
+			}
+		}
+	}
+}
+.components-tooltip{
+	font-size: 14px;
+} 
