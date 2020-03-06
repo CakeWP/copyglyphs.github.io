@@ -9,18 +9,22 @@ import './style.scss';
  * Internal dependencies
  */
 import Chars from './characters.json';
+import SimpleSnackbar from '../snackbar';
 
 /**
  * WordPress dependencies
  */
-import { Button, TabPanel, TextControl, Tooltip } from '@wordpress/components';
+import { Button, TabPanel, TextControl, Tooltip, ClipboardButton } from '@wordpress/components';
 
 class Charmap extends Component {
   constructor() {
     super(...arguments);
     this.state = {
       characters: Chars.Misc,
-      keyword: ''
+	  keyword: '',
+	  date: '',
+	  message: '',
+	  copied: false,
     };
   }
 
@@ -40,7 +44,7 @@ class Charmap extends Component {
 
   render() {
     const { name, value, isActive, onChange } = this.props;
-    const { characters, keyword } = this.state;
+    const { characters, keyword, copied, date, message } = this.state;
 
     const onSelect = tab => {
       const tabContent = typeof Chars[tab] !== 'undefined' ? Chars[tab] : {};
@@ -101,14 +105,18 @@ class Charmap extends Component {
                             <Tooltip
                               text={upperFirst(character.name.toLowerCase())}
                             >
-                              <Button
-                                isTertiary
-                                onClick={() => {
-                                  // onChange(insert(value, character.char));
+                              <ClipboardButton
+                                text={character.char}
+                                onCopy={() => {
+									this.setState({
+										copied: true,
+										date: new Date(),
+										message: 'Copied ' + character.char + ' to your clipboard.'
+									});
                                 }}
                               >
                                 {character.char}
-                              </Button>
+                              </ClipboardButton>
                             </Tooltip>
                           </li>
                         );
@@ -122,6 +130,7 @@ class Charmap extends Component {
             }}
           </TabPanel>
         </div>
+        {copied ? <SimpleSnackbar key={date} status={message} /> : null}
       </Fragment>
     );
   }
