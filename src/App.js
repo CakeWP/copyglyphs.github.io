@@ -1,6 +1,5 @@
 import React from 'react';
 import Charmap from './components/charmap/index';
-import logo from './logo.svg';
 
 function App() {
   return (
