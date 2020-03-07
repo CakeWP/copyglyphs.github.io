@@ -11,7 +11,8 @@ export const SnackbarContent = styled(SnackbarContentBase)`
     background: #000;
 	padding: 0.5rem 1.25rem;
 	justify-content: center;
-	min-width: auto;
+  min-width: auto;
+  font-size: 16px;
   }
 `;
 
