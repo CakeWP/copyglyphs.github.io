@@ -78,7 +78,9 @@ body{
 .desc{
 	font-size: 21px;
 	padding: 20px 0px 40px 40px;
-	margin-left: auto
+	margin-left: auto;
+	flex-basis: 50%;
+	text-align: right;
 }
 
 ul.editorskit-charmap-list {
@@ -188,4 +190,18 @@ ul.editorskit-charmap-list {
 
 .App-footer a:hover{
 	color: #f9d3bb;
+}
+
+@media screen and (max-width: 600px) {
+	body, .App-footer{
+		padding: 2em;
+	}
+	.desc{
+		flex-basis: 100%;
+		padding-left: 0px;
+		text-align: left;
+	}
+	.App-footer{
+		margin: 50px -2em 0;
+	}
 }
