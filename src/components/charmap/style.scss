@@ -14,6 +14,71 @@
 
 html, body{
 	background: #f9d3bb;
+	font-size: 14px;
+}
+body{
+	padding: 4em;
+	padding-bottom: 0;
+	margin: 0;
+}
+.App-header{
+	display: flex;
+  	flex-direction: row;
+  	flex-wrap: wrap;
+	align-items: baseline;
+	margin-bottom: 30px;
+}
+.App-header > div{
+	display: flex;
+	flex-direction: column;
+	align-self: flex-end;
+	
+}
+.logo h1 {
+	position: relative;
+	display: inline-block;
+	font-size: 50px;
+	line-height: 50px;
+	// border: 1px solid #ce6c58;
+	// box-shadow: 12px 15px #ce6c58;
+	padding: 20px 20px 40px;
+	margin: 0px;
+}
+.logo h1::after{
+	position: absolute;
+	content: "by EditorsKit";
+	bottom: 10px;
+	right: 25px;
+	font-size: 10px;
+	color: rgba(0,0,0,.5);
+	font-weight: 300;
+	font-style: italic;
+}
+
+.logo h1 span{
+	display: table;
+	position: relative;
+	// padding: 5px 15px;
+	
+	    
+}
+.logo h1 span:first-of-type::before{
+	position: absolute;
+	content: "Ω";
+	font-size: 14px;
+	top: -25px;
+	left: -10px;
+
+}
+
+.logo h1 span:last-of-type{
+	padding-left: 28px;
+}
+
+.desc{
+	font-size: 21px;
+	padding: 20px 0px 40px 40px;
+	margin-left: auto
 }
 
 ul.editorskit-charmap-list {
@@ -26,28 +91,28 @@ ul.editorskit-charmap-list {
     grid-column-gap: 0;
 	grid-row-gap: 0;
 	grid-template-rows: auto;
-	grid-template-columns: repeat(auto-fill, minmax(54px, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
     width: 100%;
 	justify-items: center;
-	border-top: 1px solid rgba(0,0,0,.1);
-  	border-left: 1px solid rgba(0,0,0,.1);
+	border-top: 1px solid rgba(0,0,0,.05);
+  	border-left: 1px solid rgba(0,0,0,.05);
 
 	li {
 		display: flex;
 		align-self: stretch;
 		justify-self: stretch;
 		justify-content: center;
-		border-bottom: 1px solid rgba(0,0,0,.1);
-  		border-right: 1px solid rgba(0,0,0,.1);
+		border-bottom: 1px solid rgba(0,0,0,.05);
+  		border-right: 1px solid rgba(0,0,0,.05);
 		padding: 2px;
 		margin: 0;
 
 		.components-button {
 			display: inline-block;
 			box-sizing: border-box;
-			font-size: 25px;
-			width: 50px;
-			height: 50px;
+			font-size: 28px;
+			width: 60px;
+			height: 60px;
 			color: #111;
 			border: 1px solid transparent;
 			text-align: center;
@@ -101,4 +166,26 @@ ul.editorskit-charmap-list {
 		height: 42px;
 		padding: 0 15px;
 	}
+}
+
+.App-footer{
+	padding: 4em;
+	margin: 50px -4em 0;
+	background: #111;
+	color: #fff;
+}
+
+.App-footer h2{
+	font-size: 50px;
+}
+.App-footer p{
+	font-size: 21px;
+	line-height: 31px;
+}
+.App-footer a{
+	color: #fff;
+}
+
+.App-footer a:hover{
+	color: #f9d3bb;
 }
