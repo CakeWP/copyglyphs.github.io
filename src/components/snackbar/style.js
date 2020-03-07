@@ -8,8 +8,7 @@ export const Snackbar = styled(SnackbarBase)`
 export const SnackbarContent = styled(SnackbarContentBase)`
   /* >>> */
   && {
-    background: ${props =>
-      props.status === 'success' ? props.theme.success : props.theme.error};
+    background: #000;
 	padding: 0.5rem 1.25rem;
 	justify-content: center;
 	min-width: auto;
